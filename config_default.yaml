@@ -11,6 +11,9 @@ users:
 pages:
   - title: PP
     widgets:
+      - type: amount_today_count
+        bucket: [pp:message:success, pp:reply:success, pp:push:success]
+        title: 数据统计
       - type: amount_line_chart
         bucket: [pp:message:success, pp:message:failure]
         title: 发送邮件

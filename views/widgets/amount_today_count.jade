@@ -88,6 +88,13 @@ mixin amount_today_count(widget)
             locals.data.push(iLocals);
           });
           $('#container' + id).html(Mustache.render(tpl, locals));
+          // 将 pp:message:success 显示成 message
+          $('td.amount-today-count-left').each(function (item) {
+            var _arr = $(this).text().toLowerCase().replace('today\'s', '').trim().split(':');
+            if (_arr.length === 3) {
+              $(this).html('TODAY\'S<br /><b>' + _arr[1] + '</b>');
+            }
+          });
         });
       };
       execute();

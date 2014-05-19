@@ -10,6 +10,8 @@ block content
             a(href="/pages/" + page.title,class="dropdown-toggle",data-toggle="dropdown") #{page.title} 
               b.caret
             ul(class="dropdown-menu" role="menu")
+              li(role="presentation")
+                a(role="menuitem" tabindex="-1" href="/pages/" + page.title) Preview 
               for widget in page.widgets
                 li(role="presentation")
                   a(role="menuitem" tabindex="-1" href="/pages/" + page.title + "/" + widget.title) #{widget.title} 
