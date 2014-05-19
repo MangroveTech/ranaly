@@ -58,6 +58,23 @@ app.get('/pages/:pageID', middleware.requireRole,
     if (page.id === req.params.pageID) {
       res.locals.title = page.title + ' - ' + app.locals.settings.title;
       res.locals.page = page;
+      res.locals.page.pageTitle = '';
+      res.render('page');
+      return true;
+    }
+  });
+  if (!found) {
+    noPageError(req, res);
+  }
+});
+
+app.get('/pages/:pageID/:pageTitle', middleware.requireRole,
+    middleware.generateMenu(config), function (req, res) {
+  var found = config.pages.some(function (page) {
+    if (page.id === req.params.pageID.toLowerCase()) {
+      res.locals.title = page.title + ' - ' + app.locals.settings.title;
+      res.locals.page = page;
+      res.locals.page.pageTitle = req.params.pageTitle;
       res.render('page');
       return true;
     }

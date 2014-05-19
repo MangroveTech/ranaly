@@ -1,12 +1,30 @@
-app_name: My App
+app_name: Wave
 port: 3000
 redis:
   host: 127.0.0.1
   port: 6379
-  key_prefix: 'Ranaly:'
+  key_prefix: 'ranaly:'
 users:
-  - username: admin
-    password: admin123
+  - username: 1
+    password: 1
     role: 0
 pages:
-  # Add your pages here.
+  - title: PP
+    widgets:
+      - type: amount_line_chart
+        bucket: [pp:message:success, pp:message:failure]
+        title: 发送邮件
+      - type: amount_line_chart
+        bucket: [pp:reply:success, pp:reply:failure]
+        title: 回复邮件
+      - type: amount_line_chart
+        bucket: [pp:push:success, pp:push:failure]
+        title: 推送
+  - title: Tower
+    widgets:
+      - type: amount_line_chart
+        bucket: tower:xxx
+        title: xxx
+      - type: amount_line_chart
+        bucket: tower:yyy
+        title: yyy

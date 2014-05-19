@@ -5,13 +5,14 @@ block content
     .navbar-inner
       a.brand(href="/") #{config.app_name}
       ul.nav
-        for _page in menus
-          if _page.id == page.id
-            li.active
-              a(href="/pages/" + _page.id) #{_page.title}
-          else
-            li
-              a(href="/pages/" + _page.id) #{_page.title}
+        for page in config.pages
+          li.dropdown
+            a(href="/pages/" + page.title,class="dropdown-toggle",data-toggle="dropdown") #{page.title} 
+              b.caret
+            ul(class="dropdown-menu" role="menu")
+              for widget in page.widgets
+                li(role="presentation")
+                  a(role="menuitem" tabindex="-1" href="/pages/" + page.title + "/" + widget.title) #{widget.title} 
       ul.nav.pull-right
         li.dropdown
           a.dropdown-toggle(href='#',data-toggle='dropdown')
@@ -24,3 +25,4 @@ block content
             li
               a(href="/logout") Logout
   block page_content
+
