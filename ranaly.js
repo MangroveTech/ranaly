@@ -55,7 +55,7 @@ app.get('/', middleware.requireRole, middleware.generateMenu(config),
 app.get('/pages/:pageID', middleware.requireRole,
     middleware.generateMenu(config), function (req, res) {
   var found = config.pages.some(function (page) {
-    if (page.id === req.params.pageID) {
+    if (page.id === req.params.pageID.toLowerCase()) {
       res.locals.title = page.title + ' - ' + app.locals.settings.title;
       res.locals.page = page;
       res.locals.page.pageTitle = '';
