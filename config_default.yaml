@@ -12,17 +12,17 @@ pages:
   - title: PP
     widgets:
       - type: amount_today_count
-        bucket: [pp:message:success, pp:reply:success, pp:push:success]
+        bucket: [pp:push:success,  pp:reply:success, pp:message:success]
         title: statistics
       - type: amount_line_chart
-        bucket: [pp:message:success, pp:message:failure]
-        title: message
+        bucket: [pp:push:success, pp:push:failure]
+        title: push
       - type: amount_line_chart
         bucket: [pp:reply:success, pp:reply:failure]
         title: reply
       - type: amount_line_chart
-        bucket: [pp:push:success, pp:push:failure]
-        title: push
+        bucket: [pp:message:success, pp:message:failure]
+        title: message
   - title: Tower
     widgets:
       - type: amount_line_chart
