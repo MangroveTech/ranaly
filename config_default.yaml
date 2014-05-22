@@ -1,7 +1,7 @@
 app_name: Wave
-port: 3000
+port: 8300
 redis:
-  host: 127.0.0.1
+  host: 106.186.114.114
   port: 6379
   key_prefix: 'ranaly:'
 users:
