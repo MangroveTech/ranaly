@@ -13,16 +13,16 @@ pages:
     widgets:
       - type: amount_today_count
         bucket: [pp:message:success, pp:reply:success, pp:push:success]
-        title: 数据统计
+        title: statistics
       - type: amount_line_chart
         bucket: [pp:message:success, pp:message:failure]
-        title: 发送邮件
+        title: message
       - type: amount_line_chart
         bucket: [pp:reply:success, pp:reply:failure]
-        title: 回复邮件
+        title: reply
       - type: amount_line_chart
         bucket: [pp:push:success, pp:push:failure]
-        title: 推送
+        title: push
   - title: Tower
     widgets:
       - type: amount_line_chart
