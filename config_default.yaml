@@ -6,7 +6,7 @@ redis:
   key_prefix: 'ranaly:'
 users:
   - username: Wave-Team
-    password: chengkeshigou
+    password: ping55555
     role: 0
 pages:
   - title: PP
