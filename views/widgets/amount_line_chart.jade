@@ -100,9 +100,9 @@ mixin amount_line_chart(widget)
 
           var timeToString = function (time) {
             if (to)
-              return moment(time).format('YYYYMMDD');
+              return moment(time).utc().format('YYYYMMDD');
             else
-              return moment(time).format('YYYYMMDDHH');
+              return moment(time).utc().format('YYYYMMDDHH');
           }
           ranalyApi.amount.get(widget.bucket, _.map(timeList, timeToString), function (data) {
             data = data.items;
