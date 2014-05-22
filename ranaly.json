@@ -1,0 +1,9 @@
+[
+  {
+    "name"      : "ranaly",
+    "script"    : "./ranaly.js",
+    "env": {
+      "NODE_ENV": "RELEASE"
+    }
+  }
+]
